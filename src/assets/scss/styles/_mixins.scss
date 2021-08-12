@@ -1,0 +1,47 @@
+@function emCalc($pixels, $context: 14) {
+    @return #{($pixels - 1)/$context}em
+}
+
+@mixin media($size, $query:max-width) {
+    @media only screen and ($query: #{$size}px) {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    @each $placeholder in
+        "::-webkit-input-placeholder",
+        ":-moz-placeholder",
+        "::-moz-placeholder", 
+        ":-ms-input-placeholder" {
+        &#{$placeholder} {
+            @content;
+        }
+    }
+}
+
+@mixin lhCalc($pixel){
+    line-height: #{$pixel + 10}px;
+    @media only screen and (max-width:900px){
+        line-height: #{$pixel + 8}px;
+    }
+    @media only screen and (max-width:700px){
+        line-height: #{$pixel + 6}px;
+    }
+    @media only screen and (max-width:500px){
+        line-height: #{$pixel + 2}px;
+    }
+}
+
+@mixin transitionEffect($property: all, $duration: .3s, $ease: linear){
+	-webkit-transition: $property $duration $ease !important;
+	-moz-transition: $property $duration $ease !important;
+	-o-transition: $property $duration $ease !important;
+	transition: $property $duration $ease !important;
+}
+
+@mixin boxShadow($size: 0px 10px 25px -5px, $color: rgba(0, 0, 0, 0.1)){
+	-webkit-box-shadow: $size $color;
+	-moz-box-shadow: $size $color;
+	box-shadow: $size $color;
+}

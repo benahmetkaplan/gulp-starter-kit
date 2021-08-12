@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@import 'styles/mixins';
+
+@import "bootstrap/init";
+
+@import 'plugins/owl';
+@import 'plugins/fancybox';
+@import 'plugins/jquery-ui';
+@import 'plugins/niceselect';
+@import 'plugins/fselect';
+@import 'plugins/md-checkbox';
+@import 'plugins/md-radio';
+@import 'plugins/swal';
+@import 'plugins/aos';
+
+@import 'fonts/fontawesome';
+
+@import 'styles/space';
+@import 'styles/global';
+@import 'styles/elements';
+@import 'styles/header';
+@import 'styles/content';
+@import 'styles/footer';
+@import 'styles/keyframes';

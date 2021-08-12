@@ -1,0 +1,13 @@
+#main {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  position: relative;
+  clear: both;
+  margin-top: 123px;
+
+  @include media (991){
+    margin-top: 71.5px;
+  }
+
+}
