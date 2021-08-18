@@ -5,8 +5,6 @@ const loadTime = 1000;
 const global = {
     init: function init()
     {
-        global.isMobile.init();
-        global.isMac.init();
         global.fancybox.init();
         global.placeholder.init();
         global.phone.init();
@@ -24,21 +22,6 @@ const global = {
         global.equalize.init();
         global.lazyload.init();
         global.select.init();
-    },
-    isMobile:{
-        init: function init()
-        {
-            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-                $("body").addClass("isMobile");
-            }
-        }
-    },
-    isMac:{
-        init: function init(){
-            if(window.navigator.userAgent.indexOf("Mac OS X") > -1){
-                $("body").addClass("onlyMac");
-            }
-        }
     },
     fancybox:{
         init: function init()

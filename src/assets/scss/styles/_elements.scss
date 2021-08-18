@@ -83,11 +83,9 @@ $bgColor: #d21d19;
 
 }
 
-body.isMobile{
+html.mobile.landscape, html.tablet.landscape{
   .landscapeMobile{
-    @media (max-width:900px) and (min-height:268px) and (orientation: landscape) {
-      display: block;
-    }
+    display: block;
   }
 }
 
