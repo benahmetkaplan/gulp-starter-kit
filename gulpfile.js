@@ -6,6 +6,7 @@ const minifyCSS = require('gulp-csso');
 const minify = require('gulp-minify');
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
+const del = require('del');
 const runSequence = require('run-sequence');
 const fileinclude = require('gulp-file-include');
 var reload = browserSync.reload;
@@ -39,6 +40,12 @@ gulp.task('css', () => {
         .pipe(browserSync.stream());
 });
 
+gulp.task('img', () => {
+    gulp.src('src/assets/img/**/*')
+        .pipe(gulp.dest('dist/assets/img'))
+        .pipe(browserSync.stream());
+});
+
 gulp.task('webfonts', () => {
     gulp.src('src/assets/webfonts/**/*')
         .pipe(gulp.dest('dist/assets/webfonts'));
@@ -69,8 +76,11 @@ gulp.task('js', () => {
     .pipe(browserSync.stream());   
 });
 
+gulp.task('delete', () => del(['dist']));
+
 gulp.task('watch', () => {
     gulp.watch("src/assets/scss/**/*.scss", ['css']);
+    gulp.watch("src/assets/img/**/*", ['img']);
     gulp.watch("src/assets/webfonts/**/*", ['webfonts']);
     gulp.watch("src/assets/js/**/*", ['js']);
     gulp.watch("src/assets/js/app.js", ['es6']);
@@ -81,8 +91,10 @@ gulp.task('include-watch', ['fileinclude'], reload);
 
 gulp.task('default', () => {
     runSequence(
+        'delete',
         'fileinclude',
         'css',
+        'img',
         'webfonts',
         'es6',
         'js',
