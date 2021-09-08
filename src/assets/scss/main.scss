@@ -2,11 +2,12 @@
 
 @import 'styles/mixins';
 
-@import 'bootstrap';
+@import 'bootstrap/base';
+@import 'bootstrap/w20';
 
+@import 'plugins/jquery-ui';
 @import 'plugins/owl';
 @import 'plugins/fancybox';
-@import 'plugins/jquery-ui';
 @import 'plugins/niceselect';
 @import 'plugins/fselect';
 @import 'plugins/md-checkbox';

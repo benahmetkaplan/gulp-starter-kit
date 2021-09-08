@@ -1,0 +1,39 @@
+.w-20 {
+    flex: 0 0 20%;
+    max-width: 20%
+}
+
+@media (min-width: 576px) {
+    .w-sm-20 {
+        flex:0 0 20%;
+        max-width: 20%
+    }
+}
+
+@media (min-width: 768px) {
+    .w-md-20 {
+        flex:0 0 20%;
+        max-width: 20%
+    }
+}
+
+@media (min-width: 992px) {
+    .w-lg-20 {
+        flex:0 0 20%;
+        max-width: 20%
+    }
+}
+
+@media (min-width: 1200px) {
+    .w-xl-20 {
+        flex:0 0 20%;
+        max-width: 20%
+    }
+}
+
+@media (min-width: 1400px) {
+    .w-xxl-20 {
+        flex:0 0 20%;
+        max-width: 20%
+    }
+}
